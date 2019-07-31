@@ -31,3 +31,105 @@
     transform: rotate(360deg);
   }
 }
+
+#board {
+  height: 225px;
+  width: 225px;
+  background-color: bisque;
+  border: 6px solid brown;
+  border-radius: 3px;
+  filter: grayscale(0%);
+}
+
+#board.game-over {
+  filter: grayscale(100%);
+}
+
+#score {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-style: italic;
+  opacity: 0.3;
+  margin: 0;
+}
+
+.snake {
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background: green;
+  border-radius: 100px;
+  position: absolute;
+  margin: 0;
+  transition: all .25s linear;
+}
+
+.snake.up {
+  transform: rotate(270deg);
+}
+
+.snake.down {
+  transform: rotate(90deg);
+}
+
+.snake.left {
+  transform: rotate(180deg);
+}
+
+.snake.right {
+  transform: rotate(0deg);
+}
+
+#apple {
+  height: 15px;
+  width: 15px;
+  background: red;
+  border-radius: 100px;
+  position: absolute;
+  margin: 0;
+}
+
+#game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+#game-over p {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.eye {
+  position: absolute;
+  right: 2px;
+  height: 5px;
+  width: 5px;
+  border-radius: 50px;
+  background-color: white;
+}
+
+.eye.left {
+  top: 2px;
+}
+
+.eye.right {
+  bottom: 2px;
+}
+
+.eye::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 3px;
+  width: 3px;
+  border-radius: 50px;
+  background-color: black;
+}
